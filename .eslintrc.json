@@ -18,6 +18,7 @@
 	"plugins": ["@typescript-eslint", "eslint-plugin-import-helpers", "prettier"],
 	"rules": {
 		"camelcase": "off",
+		"no-use-before-define": "off",
 		"prettier/prettier": "error",
 		"import/no-unresolved": "error",
 		"@typescript-eslint/naming-convention": [
@@ -60,7 +61,9 @@
 	},
 	"settings": {
 		"import/resolver": {
-			"typescript": {}
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
 		}
 	}
 }
