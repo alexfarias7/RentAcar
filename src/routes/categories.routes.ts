@@ -12,6 +12,8 @@ const upload = multer({
 });
 
 categoriesRoutes.post('/', (req, res) => {
+	console.log('relotd ta funcionando caralho');
+
 	return createCategoryController.handle(req, res);
 });
 
