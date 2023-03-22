@@ -2,7 +2,7 @@ import { CategoriesRepository } from '../../modules/cars/repositories/implementa
 import { ListCategoriesController } from './ListCategoriesController';
 import { ListCategoriesUseCASE } from './ListCategoriesUsecase';
 
-const categoriesRepository = CategoriesRepository.getInstance();
+const categoriesRepository = null;
 const listCategoriesUseCase = new ListCategoriesUseCASE(categoriesRepository);
 const listCategoriesControllers = new ListCategoriesController(
 	listCategoriesUseCase

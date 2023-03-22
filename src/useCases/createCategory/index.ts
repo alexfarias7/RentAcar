@@ -2,12 +2,16 @@ import { CategoriesRepository } from '../../modules/cars/repositories/implementa
 import { CreateCategoryController } from './createCategoryController';
 import { CreateCategoryUseCase } from './CreateCategoryUseCase';
 
-const categoriesRepository = CategoriesRepository.getInstance();
+export default (): CreateCategoryController => {
+	const categoriesRepository = new CategoriesRepository();
 
-const createdCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
+	const createdCategoryUseCase = new CreateCategoryUseCase(
+		categoriesRepository
+	);
 
-const createCategoryController = new CreateCategoryController(
-	createdCategoryUseCase
-);
+	const createCategoryController = new CreateCategoryController(
+		createdCategoryUseCase
+	);
 
-export { createCategoryController, createdCategoryUseCase };
+	return createCategoryController;
+};
